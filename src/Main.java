@@ -3,14 +3,17 @@
 public class Main {
     public static void main(String[] args) {
 
-            Conta conta = new Conta();
-            conta.deposito(100);
+        Conta conta = new Conta(1233, 243);
+        conta.deposito(100);
+        conta.setTitular(new Cliente("Oseanes Dias de Farias", "222.222.222-22"));
 
-            Cliente cliente = new Cliente();
-            cliente.nome = "Oseanes D. Farias";
+        Conta conta1 = new Conta(5611, 567);
+        conta.deposito(1290);
+        conta.setTitular(new Cliente("Marta S. soares", "222.222.222-22"));
+        System.out.println(conta.getTitular().getNome());
+        System.out.println(conta.getAgencia());
+        System.out.println(conta.getTitular().getCpf());
 
-            conta.titular = cliente;
-
-        System.out.println(conta.titular.nome);
+        System.out.println("Total:" + Conta.getTotal());
     }
 }

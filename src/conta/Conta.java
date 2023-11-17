@@ -1,4 +1,7 @@
-public class Conta {
+package conta;
+import cliente.Cliente;
+
+public abstract class Conta {
     private double saldo;
     private int agencia;
     private int numero;

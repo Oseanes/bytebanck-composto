@@ -5,7 +5,7 @@ public abstract class Funcionario {
     private String cpf;
     private double salario;
 
-    public abstract double bonos();
+    public abstract double bonus();
     public String getNome() {
         return nome;
     }

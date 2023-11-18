@@ -1,52 +1,34 @@
+import cliente.SeguroDeVida;
 import conta.ContaCorrente;
-import conta.ContaPoupanca;
-import funcionario.Funcionario;
-import funcionario.Gerente;
+import sistema.*;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        /*
-        Conta conta = new Conta(1233, 243);
-        conta.deposito(100);
-        conta.setTitular(new Cliente("Oseanes Dias de Farias", "222.222.222-22"));
 
-        Conta conta1 = new Conta(5611, 567);
-        conta.deposito(1290);
-        conta.setTitular(new Cliente("Marta S. soares", "222.222.222-22"));
-        System.out.println(conta.getTitular().getNome());
-        System.out.println(conta.getAgencia());
-        System.out.println(conta.getTitular().getCpf());
+//        Gerente g = new Gerente();
+//
+//        Administrador a = new Administrador();
+//        a.setSenha(11);
+//
+//        Design d = new Design();
+//        SistemaInterno s = new SistemaInterno();
+//        Cliente c = new Cliente("Oseanes", "222.222.222-22");
+//        c.setSenha(2222);
+//        System.out.println(s.autentica(c));
 
-        System.out.println("Total:" + Conta.getTotal());
+        ContaCorrente cc = new ContaCorrente(111,114);
+        cc.deposito(1000);
+        cc.setAliquita(0.1);
+        SeguroDeVida sd = new SeguroDeVida();
+        sd.setSeguroDeVida(10000);
+        sd.setAliquita(0.1);
 
-          Gerente g = new Gerente();
-        g.setNome("Oseanes");
-        g.setSenha(234);
-        g.setSalario(3000.00);
-
-        Funcionario f = new Funcionario();
-        f.setSalario(2500.00);
-
-        ControleBonificacao c = new ControleBonificacao();
-        c.registra(g);
-        c.registra(f);
-        System.out.println(c.getTotal());
-        */
-
-        ContaCorrente cc = new ContaCorrente(1234, 432);
-        ContaPoupanca cp = new ContaPoupanca(333, 213);
-
-        cc.deposito(100.0);
-        cp.deposito(250.0);
-
-        cc.tranferencia(10, cp);
-
-        System.out.println("CC: " + cc.getSaldo());
-        System.out.println("CP: " + cp.getSaldo());
-
-
+        CalculoDoImposto ci = new CalculoDoImposto();
+        ci.registra(cc);
+        ci.registra(sd);
+        System.out.println(ci.getTotalImposto());
 
     }
 }

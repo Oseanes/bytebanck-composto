@@ -14,8 +14,8 @@ public class ContaCorrente extends Conta implements Tributavel{
         return tributo.imposto(super.getSaldo());
     }
 
-    public boolean saque(double valor){
-        return super.saque(valor + 0.2);
+    public void saque(double valor) throws SaldoInsuficienteExcecao{
+        super.saque(valor + 0.2);
     }
 
     public void setAliquita(double aliquita) {

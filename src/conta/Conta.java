@@ -9,10 +9,17 @@ public abstract class Conta {
     private Cliente titular;
 
     public Conta(int agencia, int numero){
-        Conta.total++;
+        if (agencia < 0) {
+            throw new IllegalArgumentException("Agencia inválida");
+        }
+        if(numero < 0){
+            throw new IllegalArgumentException("Numero da conta inválido");
+        }
         if(agencia > 0 && numero > 0){
             this.agencia = agencia;
             this.numero = numero;
+
+            Conta.total++;
         }
     }
     public boolean deposito(double valor){

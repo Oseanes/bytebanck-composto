@@ -8,15 +8,11 @@ import sistema.*;
 public class Main {
     public static void main(String[] args) {
 
-        ContaCorrente cc = new ContaCorrente(1111, 222);
-        cc.deposito(200.0);
-
         try {
-            cc.saque(210);
-        } catch (SaldoInsuficienteExcecao ex){
+            ContaCorrente cc = new ContaCorrente(111, -222);
+        }catch (IllegalArgumentException ex){
             System.out.println(ex.getMessage());
         }
-        System.out.println(cc.getSaldo());
 
     }
 }
